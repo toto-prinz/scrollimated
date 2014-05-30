@@ -13,8 +13,8 @@
 	position: relative;
 	width: 500px;
 	height: 500px;
-	margin: 1500px 0;
-	overflow: hidden;
+	margin: 1500px auto;
+	/*overflow: hidden;*/
 }
 
 .computer div {
@@ -46,30 +46,38 @@
 	height: 373px;
 	top: 0;
 	left: 0;
-	background-image: url(elements-assets/pantalla.png);
+	background-image: url(../elements-assets/pantalla.png);
 	z-index: 3;
 }
+
+	.inner-screen {
+		width: 500px;
+		height: 282px;
+		top: 0;
+		left: 0;
+		overflow: hidden;
+	}
 
 	.window {
 		width: 488px;
 		height: 16px;
 		top: 6px;
 		left: 6px;
-		background-image: url(elements-assets/marco_ventana.png);
+		background-image: url(../elements-assets/marco_ventana.png);
 	}
 
 	.header {
 		width: 198px;
 		height: 18px;
 		top: 26px;
-		background-image: url(elements-assets/header.png);
+		background-image: url(../elements-assets/header.png);
 	}
 
 	.footer {
 		width: 198px;
 		height: 18px;
 		top: 253px;
-		background-image: url(elements-assets/footer.png);
+		background-image: url(../elements-assets/footer.png);
 	}
 
 	.sidebar {
@@ -77,20 +85,20 @@
 		height: 189px;
 		top: 54px;
 		left: 276px;
-		background-image: url(elements-assets/sidebar.png);
+		background-image: url(../elements-assets/sidebar.png);
 	}
 
 	.title {
 		height: 11px;
 		top: 54px;
-		background-image: url(elements-assets/title.png);
+		background-image: url(../elements-assets/title.png);
 	}
 
 	.img1 {
 		width: 47px;
 		height: 45px;
 		top: 75px;
-		background-image: url(elements-assets/img1.png);
+		background-image: url(../elements-assets/img1.png);
 	}
 
 	.img2 {
@@ -98,7 +106,7 @@
 		height: 42px;
 		top: 168px;
 		left: 218px;
-		background-image: url(elements-assets/img2.png);
+		background-image: url(../elements-assets/img2.png);
 	}
 
 	.p1 {
@@ -106,31 +114,31 @@
 		height: 18px;
 		top: 75px;
 		left: 204px;
-		background-image: url(elements-assets/p1.png);
+		background-image: url(../elements-assets/p1.png);
 	}
 
 	.p2 {
 		height: 33px;
 		top: 105px;
-		background-image: url(elements-assets/p2.png);
+		background-image: url(../elements-assets/p2.png);
 	}
 
 	.p3 {
 		height: 28px;
 		top: 150px;
-		background-image: url(elements-assets/p3.png);
+		background-image: url(../elements-assets/p3.png);
 	}
 
 	.p4 {
 		height: 33px;
 		top: 190px;
-		background-image: url(elements-assets/p4.png);
+		background-image: url(../elements-assets/p4.png);
 	}
 
 	.p5 {
 		height: 8px;
 		top: 235px;
-		background-image: url(elements-assets/p5.png);
+		background-image: url(../elements-assets/p5.png);
 	}
 
 .keyboard {
@@ -138,7 +146,7 @@
 	height: 51px;
 	top: 434px;
 	left: 157px;
-	background-image: url(elements-assets/teclado.png);
+	background-image: url(../elements-assets/teclado.png);
 }
 
 .mouse {
@@ -146,7 +154,7 @@
 	height: 40px;
 	top: 460px;
 	left: 384px;
-	background-image: url(elements-assets/raton.png);
+	background-image: url(../elements-assets/raton.png);
 }
 
 
