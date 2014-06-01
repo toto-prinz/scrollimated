@@ -7,16 +7,15 @@
 	   window params */
 		wHeight = w.height(),
 	/* animated elem params */
-		// sWidth = scrollimated.width(),
 		sHeight = scrollimated.height(),
 		sTop = scrollimated.offset().top,
 		sCenter = sTop + sHeight / 2,
 		sBottom = sTop + sHeight,
 		finalPositions = [],
 	/* other params */
-		actionRadio = 0.2,	// part of the window where elements are fixed (0..1)
-		spread = 50,		// in percents
-		duration = .4, 		// proportion of the total anim duration (0..1)
+		actionRadio = 0.15,	// part of the window where elements are fixed (0..1)
+		spread = 80,		// in percents
+		duration = .3, 		// proportion of the total anim duration (0..1)
 		dMax = ( sHeight + wHeight ) / 2 - actionRadio;
 
 	scrollimated.css('height', scrollimated.css('width'));
@@ -49,8 +48,8 @@
 		if ( dc > actionRadio * wHeight / 2 && db > - sHeight ) {
 			els.each( function(index) {
 				var $t = $(this),
-					ownDir = $t.data('scrollimated-transition'),
-					delay = $t.data('scrollimated-delay') / 100,
+					ownDir = $t.data('scrollimated-transition') || 'left',
+					delay = $t.data('scrollimated-delay') / 100 || 0,
 					elemCompleted = ( animCompleted - delay < 0 ) ? 0 : Math.min( animCompleted - delay, duration),
 					vx, vy, newLeft, newTop;
 
