@@ -1,53 +1,60 @@
 (function(){
 	/* DEFINE ELEMENTS */
 	var w = $(window),
-		main = $('#main'),
 		scrollimated = $('.scrollimated'),
 		els = scrollimated.find('[data-scrollimated-transition]'),
-	/* DEFINE PARAMS */
+	/* DEFINE PARAMS
+	   window params */
 		wHeight = w.height(),
-		sWidth = scrollimated.width(),
+	/* animated elem params */
+		// sWidth = scrollimated.width(),
 		sHeight = scrollimated.height(),
 		sTop = scrollimated.offset().top,
 		sCenter = sTop + sHeight / 2,
 		sBottom = sTop + sHeight,
-		finalPositions = [];
+		finalPositions = [],
+	/* other params */
+		actionRadio = 0.2,	// part of the window where elements are fixed (0..1)
+		spread = 50,		// in percents
+		duration = .4, 		// proportion of the total anim duration (0..1)
+		dMax = ( sHeight + wHeight ) / 2 - actionRadio;
 
-	els.each(function(index) {
-		finalPositions[index] = [$(this).position().left, $(this).position().top];
+	scrollimated.css('height', scrollimated.css('width'));
+
+	els.each( function(index) {
+		finalPositions[index] = [ toPercentPosition( $(this), "left" ), toPercentPosition( $(this), "top" ) ];
 	});
 
-	function dToCenter(elt) {
-		var wCenter = w.scrollTop() + wHeight / 2;
+	w.scroll( changePosition );
 
-		return Math.abs(sCenter - wCenter);
-	}
+	w.resize( function() {
+		wHeight = w.height();
+		scrollimated.css('height', scrollimated.css('width'));
+		sHeight = scrollimated.height();
 
-	function dToBorder(elt) {
-		var wTop = w.scrollTop(),
-			wCenter = w.scrollTop() + wHeight / 2,
-			wBottom = w.scrollTop() + wHeight,
-			diff = sCenter - wCenter;
+		changePosition();
+	});
 
-		if(diff < 0) {
-			return sBottom - wTop;
-		}
-		else {
-			return wBottom - sTop;
-		}
-	}
 
-	w.scroll(function() {
+
+
+
+
+	function changePosition() {
 		var dc = dToCenter(scrollimated),
-			db = dToBorder(scrollimated);
+			db = dToBorder(scrollimated),
+			animCompleted = (dMax - db) / dMax;
 
-		if (dc > 150 && db > 0) {
-			els.each(function(index) {
+
+		if ( dc > actionRadio * wHeight / 2 && db > - sHeight ) {
+			els.each( function(index) {
 				var $t = $(this),
 					ownDir = $t.data('scrollimated-transition'),
-					vx, vy, newLeft;
+					delay = $t.data('scrollimated-delay') / 100,
+					elemCompleted = ( animCompleted - delay < 0 ) ? 0 : Math.min( animCompleted - delay, duration),
+					vx, vy, newLeft, newTop;
 
-				switch(ownDir) {
+				switch( ownDir ) {
 					case 'left':
 						vx = -1;
 						vy = 0;
@@ -56,22 +63,80 @@
 						vx = 1;
 						vy = 0;
 						break;
+					case 'top':
+						vx = 0;
+						vy = -1;
+						break;
+					case 'bottom':
+						vx = 0;
+						vy = 1;
+						break;
+					case 'topLeft':
+						vx = -1;
+						vy = -1;
+						break;
+					case 'topRight':
+						vx = 1;
+						vy = -1;
+						break;
+					case 'bottomLeft':
+						vx = -1;
+						vy = 1;
+						break;
+					case 'bottomRight':
+						vx = 1;
+						vy = 1;
+						break;
 				}
 
-				newLeft = finalPositions[index][0] + (dc - 150) * $t.data('scrollimated-priority') * vx;
+				newLeft = finalPositions[index][0] + vx * spread * elemCompleted / duration;
+				newTop = finalPositions[index][1] + vy * spread * elemCompleted / duration;
 
-				$t.css('left', newLeft + 'px');
+				$t.css({
+					'left': newLeft + '%',
+					'top' : newTop + '%',
+					'background-size' : ( 1 - elemCompleted / duration ) * 100 + '%',
+					'opacity' : ( 1 - elemCompleted / duration )
+				});
 			});
 		}
-		else if (dc <= 150 ) {
-			els.each(function(index) {
-				$(this).css('left', finalPositions[index][0] + 'px');
+		else if ( dc <= actionRadio * wHeight ) {
+			els.each( function(index) {
+				$(this).css({
+					'left': finalPositions[index][0] + '%',
+					'top' : finalPositions[index][1] + '%',
+					'background-size' : '100%',
+					'opacity' : 1
+				});
 			});
 		}
-	});
+	}
 
-	w.resize(function() {
-		wHeight = w.height();
-	})
+	function dToCenter(elt) {
+		var wCenter = w.scrollTop() + wHeight / 2;
+
+		return Math.abs( sCenter - wCenter );
+	}
+
+	function dToBorder(elt) {
+		var wTop = w.scrollTop(),
+			wCenter = wTop + wHeight / 2,
+			wBottom = wTop + wHeight,
+			diff = sCenter - wCenter;
+
+		if( diff < 0 ) {
+			return sBottom - wTop;
+		}
+		else {
+			return wBottom - sTop;
+		}
+	}
+
+	function toPercentPosition(el, prop) {
+		if( prop === "top" || prop === "bottom")
+			return ( 100 * parseFloat(el.css(prop), 10) / parseFloat(el.parent().css('height'), 10) );
+		if( prop === "left" || prop === "right")
+			return ( 100 * parseFloat(el.css(prop), 10) / parseFloat(el.parent().css('width'), 10) );
+	}
 
 })($);

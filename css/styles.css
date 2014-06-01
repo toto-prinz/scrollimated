@@ -9,166 +9,143 @@
 	background: #fff;
 }
 
-.computer {
+.scrollimated {
 	position: relative;
-	width: 500px;
+	max-width: 500px;
 	height: 500px;
 	margin: 1500px auto;
-	/*overflow: hidden;*/
-}
-
-.computer div {
-	position: absolute;
-	background-repeat: no-repeat;
 }
 
 .scrollimated div {
-	-webkit-transition: all 0.3s easeOutQuad;
-	-moz-transition: all 0.3s easeOutQuad;
-	-ms-transition: all 0.3s easeOutQuad;
-	-o-transition: all 0.3s easeOutQuad;
-	transition: all 0.3s easeOutQuad;
+	position: absolute;
+	background-repeat: no-repeat;
+	background-size: 100%;
 }
 
 
 /* POSITIONING ELEMENTS */
 
 .alignleft {
-	left: 151px;
+	left: 30.2%; /* 151 */
 }
 
 .main-col {
-	width: 114px;
+	width: 22.8%; /* 114 */
 }
 
 .screen {
-	width: 500px;
-	height: 373px;
-	top: 0;
+	width: 100%;
+	height: 74.6%; /* 373 */
 	left: 0;
+	top: 0;
 	background-image: url(../elements-assets/pantalla.png);
 	z-index: 3;
 }
 
 	.inner-screen {
-		width: 500px;
-		height: 282px;
-		top: 0;
+		width: 100%;
+		height: 75.603217158%; /* 282 / 373 */
 		left: 0;
+		top: 0;
 		overflow: hidden;
 	}
 
 	.window {
-		width: 488px;
-		height: 16px;
-		top: 6px;
-		left: 6px;
+		width: 97.6%; 			/* 488 */
+		height: 5.673758865%; 	/* 16 / 282 */
+		left: 1.2%; 			/* 6 */
+		top: 2.127659574%; 		/* 6 / 282 */
 		background-image: url(../elements-assets/marco_ventana.png);
+		z-index: 2;
 	}
 
-	.header {
-		width: 198px;
-		height: 18px;
-		top: 26px;
+	.header, .footer {
+		width: 39.6%; 			/* 198 */
+		height: 6.382978723%; 	/* 18 / 282 */
 		background-image: url(../elements-assets/header.png);
 	}
 
+	.header {
+		top: 9.219858156%; /* 26 / 282 */
+	}
+
 	.footer {
-		width: 198px;
-		height: 18px;
-		top: 253px;
-		background-image: url(../elements-assets/footer.png);
+		top: 89.716312057%; /* 253 / 282 */
 	}
 
 	.sidebar {
-		width: 73px;
-		height: 189px;
-		top: 54px;
-		left: 276px;
+		width: 14.6%; 			/* 73 */
+		height: 67.021276596%; 	/* 189 / 282 */
+		top: 19.14893617%; 		/* 54 / 282 */
+		left: 55.2%; 			/* 276 */
 		background-image: url(../elements-assets/sidebar.png);
 	}
 
 	.title {
-		height: 11px;
-		top: 54px;
+		height: 3.90070922%; 	/* 11 / 282 */
+		top: 19.14893617%; 		/* 54 / 282 */
 		background-image: url(../elements-assets/title.png);
 	}
 
 	.img1 {
-		width: 47px;
-		height: 45px;
-		top: 75px;
+		width: 9.4%;			/* 47 */
+		height: 15.957446809%;	/* 45 / 282 */
+		top: 26.595744681%;		/* 75 / 282 */
 		background-image: url(../elements-assets/img1.png);
 	}
 
 	.img2 {
-		width: 47px;
-		height: 42px;
-		top: 168px;
-		left: 218px;
+		width: 9.4%; 			/* 47 */
+		height: 14.893617021%; 	/* 42 / 282 */
+		top: 59.574468085%;		/* 168 / 282 */
+		left: 43.6%;			/* 218 */
 		background-image: url(../elements-assets/img2.png);
 	}
 
 	.p1 {
-		width: 61px;
-		height: 18px;
-		top: 75px;
-		left: 204px;
+		width: 12.2%; 			/* 61 */
+		height: 6.382978723%; 	/* 18 / 282 */
+		top: 26.595744681%; 	/* 75 / 282 */
+		left: 40.8%;			/* 204 */
 		background-image: url(../elements-assets/p1.png);
 	}
 
 	.p2 {
-		height: 33px;
-		top: 105px;
+		height: 11.70212766%;	/* 33 / 282 */
+		top: 37.234042553%;		/* 105 / 282 */
 		background-image: url(../elements-assets/p2.png);
 	}
 
 	.p3 {
-		height: 28px;
-		top: 150px;
+		height: 9.929078014%;	/* 28 / 282 */
+		top: 53.191489362%;		/* 150 / 282 */
 		background-image: url(../elements-assets/p3.png);
 	}
 
 	.p4 {
-		height: 33px;
-		top: 190px;
+		height: 11.70212766%;	/* 33 / 282 */
+		top: 67.375886525%;		/* 190 / 282 */
 		background-image: url(../elements-assets/p4.png);
 	}
 
 	.p5 {
-		height: 8px;
-		top: 235px;
+		height: 2.836879433%;	/* 8 / 282 */
+		top: 83.333333333%;		/* 235 / 282 */
 		background-image: url(../elements-assets/p5.png);
 	}
 
 .keyboard {
-	width: 186px;
-	height: 51px;
-	top: 434px;
-	left: 157px;
+	width: 37.2%;	/* 186 */
+	height: 10.2%;	/* 51 */
+	top: 86.8%;		/* 434 */
+	left: 31.4%;	/* 157 */
 	background-image: url(../elements-assets/teclado.png);
 }
 
 .mouse {
-	width: 26px;
-	height: 40px;
-	top: 460px;
-	left: 384px;
+	width: 5.2%;	/* 26 */
+	height: 8%;		/* 40 */
+	top: 92%;		/* 460 */
+	left: 76.8%;	/* 384 */
 	background-image: url(../elements-assets/raton.png);
-}
-
-
-/* TRANSITIONS */
-
-.from-left {
-	left: -100%;
-}
-.from-right {
-	right: -100%;
-}
-.from-top {
-	top: -100%;
-}
-.from-bottom {
-	bottom: -100%;
 }
