@@ -11,14 +11,15 @@
 		sTop = scrollimated.offset().top,
 		sCenter = sTop + sHeight / 2,
 		sBottom = sTop + sHeight,
-		finalPositions = [],
-	/* other params */
+		dMax, finalPositions = [],
+	/* configuration params */
 		actionRadio = 0.15,	// part of the window where elements are fixed (0..1)
 		spread = 80,		// in percents
-		duration = .3, 		// proportion of the total anim duration (0..1)
-		dMax = ( sHeight + wHeight ) / 2 - actionRadio;
+		duration = .3; 		// proportion of the total anim duration (0..1)
+
 
 	scrollimated.css('height', scrollimated.css('width'));
+	dMax = ( sHeight + wHeight ) / 2 - actionRadio;
 
 	els.each( function(index) {
 		finalPositions[index] = [ toPercentPosition( $(this), "left" ), toPercentPosition( $(this), "top" ) ];
@@ -55,6 +56,7 @@
 
 				switch( ownDir ) {
 					case 'left':
+					default:
 						vx = -1;
 						vy = 0;
 						break;

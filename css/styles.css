@@ -1,11 +1,31 @@
+/* BASIC RESET AND DEFAULT STYLINGS */
 * {
 	padding: 0;
 	margin: 0;
 }
 
+html {
+	font-family: helvetica, 'helvetica neue', Arial, sans-serif;
+}
+
+h1 {
+	font-size: 2em;
+	margin: 1em 0 0.5em;
+}
+
+h2 {
+	font-size: 1.5em;
+	margin: 1em 0 0.5em;
+}
+
+p {
+	font-size: 1em;
+	margin: 1em 0;
+}
+
 .container {
 	max-width: 960px;
-	margin: 50px auto;
+	margin: 0 auto;
 	background: #fff;
 }
 
@@ -13,7 +33,7 @@
 	position: relative;
 	max-width: 500px;
 	height: 500px;
-	margin: 1500px auto;
+	margin: 0 auto;
 }
 
 .scrollimated div {
