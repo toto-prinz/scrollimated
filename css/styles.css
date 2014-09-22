@@ -1,0 +1,171 @@
+/* BASIC RESET AND DEFAULT STYLINGS */
+* {
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	font-family: helvetica, 'helvetica neue', Arial, sans-serif;
+}
+
+h1 {
+	font-size: 2em;
+	margin: 1em 0 0.5em;
+}
+
+h2 {
+	font-size: 1.5em;
+	margin: 1em 0 0.5em;
+}
+
+p {
+	font-size: 1em;
+	margin: 1em 0;
+}
+
+.container {
+	max-width: 960px;
+	margin: 0 auto;
+	background: #fff;
+}
+
+.scrollimated {
+	position: relative;
+	max-width: 500px;
+	height: 500px;
+	margin: 0 auto;
+}
+
+.scrollimated div {
+	position: absolute;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+
+/* POSITIONING ELEMENTS */
+
+.alignleft {
+	left: 30.2%; /* 151 */
+}
+
+.main-col {
+	width: 22.8%; /* 114 */
+}
+
+.screen {
+	width: 100%;
+	height: 74.6%; /* 373 */
+	left: 0;
+	top: 0;
+	background-image: url(../elements-assets/pantalla.png);
+	z-index: 3;
+}
+
+	.inner-screen {
+		width: 100%;
+		height: 75.603217158%; /* 282 / 373 */
+		left: 0;
+		top: 0;
+		overflow: hidden;
+	}
+
+	.window {
+		width: 97.6%; 			/* 488 */
+		height: 5.673758865%; 	/* 16 / 282 */
+		left: 1.2%; 			/* 6 */
+		top: 2.127659574%; 		/* 6 / 282 */
+		background-image: url(../elements-assets/marco_ventana.png);
+		z-index: 2;
+	}
+
+	.header, .footer {
+		width: 39.6%; 			/* 198 */
+		height: 6.382978723%; 	/* 18 / 282 */
+		background-image: url(../elements-assets/header.png);
+	}
+
+	.header {
+		top: 9.219858156%; /* 26 / 282 */
+	}
+
+	.footer {
+		top: 89.716312057%; /* 253 / 282 */
+	}
+
+	.sidebar {
+		width: 14.6%; 			/* 73 */
+		height: 67.021276596%; 	/* 189 / 282 */
+		top: 19.14893617%; 		/* 54 / 282 */
+		left: 55.2%; 			/* 276 */
+		background-image: url(../elements-assets/sidebar.png);
+	}
+
+	.title {
+		height: 3.90070922%; 	/* 11 / 282 */
+		top: 19.14893617%; 		/* 54 / 282 */
+		background-image: url(../elements-assets/title.png);
+	}
+
+	.img1 {
+		width: 9.4%;			/* 47 */
+		height: 15.957446809%;	/* 45 / 282 */
+		top: 26.595744681%;		/* 75 / 282 */
+		background-image: url(../elements-assets/img1.png);
+	}
+
+	.img2 {
+		width: 9.4%; 			/* 47 */
+		height: 14.893617021%; 	/* 42 / 282 */
+		top: 59.574468085%;		/* 168 / 282 */
+		left: 43.6%;			/* 218 */
+		background-image: url(../elements-assets/img2.png);
+	}
+
+	.p1 {
+		width: 12.2%; 			/* 61 */
+		height: 6.382978723%; 	/* 18 / 282 */
+		top: 26.595744681%; 	/* 75 / 282 */
+		left: 40.8%;			/* 204 */
+		background-image: url(../elements-assets/p1.png);
+	}
+
+	.p2 {
+		height: 11.70212766%;	/* 33 / 282 */
+		top: 37.234042553%;		/* 105 / 282 */
+		background-image: url(../elements-assets/p2.png);
+	}
+
+	.p3 {
+		height: 9.929078014%;	/* 28 / 282 */
+		top: 53.191489362%;		/* 150 / 282 */
+		background-image: url(../elements-assets/p3.png);
+	}
+
+	.p4 {
+		height: 11.70212766%;	/* 33 / 282 */
+		top: 67.375886525%;		/* 190 / 282 */
+		background-image: url(../elements-assets/p4.png);
+	}
+
+	.p5 {
+		height: 2.836879433%;	/* 8 / 282 */
+		top: 83.333333333%;		/* 235 / 282 */
+		background-image: url(../elements-assets/p5.png);
+	}
+
+.keyboard {
+	width: 37.2%;	/* 186 */
+	height: 10.2%;	/* 51 */
+	top: 86.8%;		/* 434 */
+	left: 31.4%;	/* 157 */
+	background-image: url(../elements-assets/teclado.png);
+}
+
+.mouse {
+	width: 5.2%;	/* 26 */
+	height: 8%;		/* 40 */
+	top: 92%;		/* 460 */
+	left: 76.8%;	/* 384 */
+	background-image: url(../elements-assets/raton.png);
+}
