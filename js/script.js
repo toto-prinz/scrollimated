@@ -31,6 +31,9 @@
 		wHeight = w.height();
 		scrollimated.css('height', scrollimated.css('width'));
 		sHeight = scrollimated.height();
+		sTop = scrollimated.offset().top;
+		sCenter = sTop + sHeight / 2;
+		sBottom = sTop + sHeight;
 
 		changePosition();
 	});
