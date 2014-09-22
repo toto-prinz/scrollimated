@@ -34,6 +34,9 @@
 		sTop = scrollimated.offset().top;
 		sCenter = sTop + sHeight / 2;
 		sBottom = sTop + sHeight;
+		els.each( function(index) {
+			finalPositions[index] = [ toPercentPosition( $(this), "left" ), toPercentPosition( $(this), "top" ) ];
+		});
 
 		changePosition();
 	});
