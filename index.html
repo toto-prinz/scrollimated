@@ -9,7 +9,31 @@
 <body>
 	<div id="main" class="container">
 		<h1>Scrollimated</h1>
+		<p>Animate visual elements to construct a composition in a puzzle way while scrolling (works better if the composition is not on top of the page).</p>
 		<h2>Scroll down to see it in action &#8659;</h2>
+
+		<h2>Configuration</h2>
+
+		<h3>index.html</h3>
+
+		<ul class="task-list">
+			<li>.scrollimated (<em>required</em>): container of the composition</li>
+			<li>data-scrollimated-transition (<em>required for animated elements</em>): data attribute used to define the direction of the motion. Elements without this data attribute remain fixed. Accepted values: top, bottom, left, right, topLeft, topRight, bottomLeft, bottomRight </li>
+			<li>data-scrollimated-delay: defines where the animation starts for the element</li>
+		</ul>
+
+		<h3>script.js</h3>
+
+		<ul class="task-list">
+			<li>actionRadio:  defines the part of the window with the elements blocked in place</li>
+			<li>spread: defines the quantity of motion</li>
+			<li>duration: controls motion speed</li>
+		</ul>
+		<h3>styles.css</h3>
+
+		<p>Sizing values defined in percent to keep it responsive.</p>
+
+		<p>It's recommanded to do it with positionning too (but not required).</p>
 		<p>Lot of fancy lorem ipsum to move the element down in page</p>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, vel, neque aut ullam ipsam illo id velit eius non ad sunt veritatis est sed cum molestiae labore possimus. Iure, vero.</p>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, natus, quia incidunt illo cumque aspernatur repellat officiis quam eius cum nulla eveniet amet ad. Facere, quisquam, quidem, iusto sapiente officiis cumque vel nesciunt aliquid rerum aspernatur impedit error delectus! Reprehenderit ipsam sint quos voluptate nemo. Harum eius distinctio necessitatibus consequuntur quidem provident ipsa nihil obcaecati nostrum adipisci. Excepturi, repellat, fugiat, quas laudantium animi sunt molestiae doloremque mollitia provident dignissimos suscipit earum. Quae, beatae, tempora, dignissimos totam nesciunt perspiciatis voluptatum qui officiis numquam voluptate aspernatur hic perferendis blanditiis natus suscipit rem error earum vitae ad assumenda maiores nemo harum aperiam soluta!</p>
